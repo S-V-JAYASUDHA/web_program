@@ -8,11 +8,11 @@
 </head>
 <body>
     <form>
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name">
 
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name">
 
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email">
@@ -58,21 +58,18 @@
 
         <label for="community">Community</label>
         <select id="community" name="community" required>
+            <!-- Add community options here -->
             <option value="select">Select Community</option>
-            <option value="ST">ST</option>
-            <option value="SC">SC</option>
-            <option value="MBC">MBC</option>
-            <option value="BC">BC</option>
-            <option value="OC">OC</option>
+            <!-- Add more options as needed -->
         </select>
 
         <label for="address">Address</label>
-        <textarea id="address" name="address" rows="4" placeholder="Type your address here..."></textarea>
+        <textarea id="address" name="address" rows="4" required></textarea>
 
         <label for="writingExperience">Do you have any writing experience?</label>
-        <input type="radio" id="yesExperience" name="writingExperience" value="yes" >
+        <input type="radio" id="yesExperience" name="writingExperience" value="yes" required>
         <label for="yesExperience">Yes</label>
-        <input type="radio" id="noExperience" name="writingExperience" value="no" >
+        <input type="radio" id="noExperience" name="writingExperience" value="no" required>
         <label for="noExperience">No</label>
 
         <label for="experienceYears">Years of Experience:</label>
