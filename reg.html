@@ -1,6 +1,86 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <p> This is demo page</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>WRIGHTERS HUB Registration</title>
+</head>
+<body>
+    <form>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="dob">DOB (mm/dd/yr)</label>
+        <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+            <option value="select">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+            <!-- Add country options here -->
+            <option value="select">Select Country</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="religion">Religion</label>
+        <select id="religion" name="religion" required>
+            <!-- Add religion options here -->
+            <option value="select">Select Religion</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="community">Community</label>
+        <select id="community" name="community" required>
+            <!-- Add community options here -->
+            <option value="select">Select Community</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <label for="writingExperience">Do you have any writing experience?</label>
+        <input type="radio" id="yesExperience" name="writingExperience" value="yes" required>
+        <label for="yesExperience">Yes</label>
+        <input type="radio" id="noExperience" name="writingExperience" value="no" required>
+        <label for="noExperience">No</label>
+
+        <label for="experienceYears">Years of Experience:</label>
+        <input type="number" id="experienceYears" name="experienceYears">
+
+        <label for="genresInterest">Genres of Interest</label>
+        <input type="checkbox" id="fiction" name="genresInterest" value="Fiction">
+        <label for="fiction">Fiction</label>
+        <input type="checkbox" id="nonFiction" name="genresInterest" value="Non-fiction">
+        <label for="nonFiction">Non-fiction</label>
+        <input type="checkbox" id="poetry" name="genresInterest" value="Poetry">
+        <label for="poetry">Poetry</label>
+        <input type="checkbox" id="drama" name="genresInterest" value="Drama">
+        <label for="drama">Drama</label>
+        <input type="checkbox" id="others" name="genresInterest" value="Others">
+        <label for="others">Others:</label>
+        <input type="text" id="othersText" name="othersText">
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
 </html>
