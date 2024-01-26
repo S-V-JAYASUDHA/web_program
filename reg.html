@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="Regis.css">
     <title>WRIGHTERS HUB Registration</title>
 </head>
 <body>
     <form>
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" required>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name">
 
         <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name">
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email">
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" placeholder="Username" >
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="password">
 
-        <label for="dob">DOB (mm/dd/yr)</label>
-        <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" required>
+        <label for="dob">DOB</label>
+        <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" >
 
         <label for="gender">Gender</label>
-        <select id="gender" name="gender" required>
+        <select id="gender" name="gender" >
             <option value="select">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -35,17 +35,25 @@
         </select>
 
         <label for="country">Country</label>
-        <select id="country" name="country" required>
-            <!-- Add country options here -->
+        <select id="country" name="country" >
             <option value="select">Select Country</option>
-            <!-- Add more options as needed -->
+            <option value="India">India</option>
+            <option value="america">America</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Australia">Australia</option>
+            <option value="Asia">Asia</option>
+            <option value="Russia">Russia</option>
+            <option value="Japan">Japan</option>
+            <option value="China">China</option>
         </select>
 
         <label for="religion">Religion</label>
-        <select id="religion" name="religion" required>
-            <!-- Add religion options here -->
+        <select id="religion" name="religion">
             <option value="select">Select Religion</option>
-            <!-- Add more options as needed -->
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Christian">hristian</option>
+            <option value="Christian">Christian</option>
         </select>
 
         <label for="community">Community</label>
