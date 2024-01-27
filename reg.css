@@ -23,6 +23,11 @@ form {
     width: 100%;
 }
 
+.check{
+    display: flex;
+    width: 10%;
+}
+
 
 .fa-eye{
     position: absolute;
