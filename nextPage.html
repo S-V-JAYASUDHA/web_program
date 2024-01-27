@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nextPage.css">
+    <title>WRIGHTERS HUB Registration</title>
+<body>
+    <form>
+        <label for="genresInterest">Genres of Interest</label>
+            <div class="check">
+                <input type="checkbox" id="fiction" name="genresInterest" value="Fiction">
+                <label for="fiction">Fiction</label>
+            </div>
+            
+            <div class="check">
+                <input type="checkbox" id="nonFiction" name="genresInterest" value="Non-fiction">
+                <label for="nonFiction">Non-fiction</label>
+            </div>
+    
+            <div class="check">
+                <input type="checkbox" id="poetry" name="genresInterest" value="Poetry">
+                <label for="poetry">Poetry</label>
+            </div>
+           
+            <div class="check">
+                <input type="checkbox" id="drama" name="genresInterest" value="Drama">
+            <label for="drama">Drama</label>
+            </div>
+    
+            <div class="check">
+                <label for="others">Others:</label> 
+            </div>
+        
+            <input type="text" id="othersText" name="othersText">
+
+            <label for="phone_no">Phone Number</label>
+            <input type="text" name="phone_no" id="phone_no" pattern="[789][0-9]{9}" title="Phone number start with 7-9 and remaing 9 digit with 0-9 and should contain 10 10-digit" >
+            
+           
+            <button type="submit">Submit</button>
+
+    </form>
+
+
+</body>
+</html>

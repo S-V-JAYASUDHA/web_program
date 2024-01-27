@@ -90,39 +90,7 @@
             <label for="noExperience">No</label>
         </div>
 
-        <label for="experienceYears">Years of Experience:</label>
-        <input type="number" id="experienceYears" name="experienceYears">
-
-        
-        <label for="genresInterest">Genres of Interest</label>
-        <div class="check">
-            <input type="checkbox" id="fiction" name="genresInterest" value="Fiction">
-            <label for="fiction">Fiction</label>
-        </div>
-        
-        <div class="check">
-            <input type="checkbox" id="nonFiction" name="genresInterest" value="Non-fiction">
-            <label for="nonFiction">Non-fiction</label>
-        </div>
-
-        <div class="check">
-            <input type="checkbox" id="poetry" name="genresInterest" value="Poetry">
-            <label for="poetry">Poetry</label>
-        </div>
-       
-        <div class="check">
-            <input type="checkbox" id="drama" name="genresInterest" value="Drama">
-        <label for="drama">Drama</label>
-        </div>
-
-        <div class="check">
-            <input type="checkbox" id="others" name="genresInterest" value="Others">
-            <label for="others">Others:</label> 
-        </div>
-    
-        <input type="text" id="othersText" name="othersText">
-
-        <button type="submit">Submit</button>
+        <button type="submit">Next</button>
     </form>
 
     <script>
@@ -145,5 +113,29 @@
             }
         }
     </script>
+
+<script>
+    function validateForm() {
+        // Get the value of the writing experience radio buttons
+        var writingExperienceValue = document.querySelector('input[name="writingExperience"]:checked').value;
+
+        // Check if the user selected "No" for writing experience
+        if (writingExperienceValue === "no") {
+            // Redirect to the next page (replace 'nextPage.html' with your actual next page URL)
+            window.location.href = 'nextPage.html';
+            return false; // Prevent form submission
+        }
+
+        if (writingExperienceValue === "yes") {
+            // Redirect to the next page (replace 'nextPage.html' with your actual next page URL)
+            window.location.href = 'writer_next.html';
+            return false; // Prevent form submission
+        }
+
+
+        // Continue with form submission if writing experience is "Yes"
+        return true;
+    }
+</script>
 </body>
 </html>
