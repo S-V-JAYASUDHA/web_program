@@ -8,67 +8,86 @@
 </head>
 <body>
     <form>
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" placeholder="First Name">
+        <div class="name-container">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+    
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+        </div>
 
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+        <div class="name-container">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username" >
 
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password">
+            <i class="fa-solid fa-eye" id="eye"></i>
+        </div>
+        
+        <div class="name-container">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
 
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username" >
+            <label for="dob">DOB</label>
+            <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" >
+        </div>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="password">
+        <div class="name-container">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" >
+                <option value="select">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+    
+            <label for="country">Country</label>
+            <select id="country" name="country" >
+                <option value="select">Select Country</option>
+                <option value="India">India</option>
+                <option value="america">America</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Australia">Australia</option>
+                <option value="Asia">Asia</option>
+                <option value="Russia">Russia</option>
+                <option value="Japan">Japan</option>
+                <option value="China">China</option>
+            </select>
+        </div>
+    
+        <div class="name-container">
+            <label for="religion">Religion</label>
+            <select id="religion" name="religion">
+                <option value="select">Select Religion</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Muslim">Muslim</option>
+                <option value="Christian">hristian</option>
+                <option value="Christian">Christian</option>
+            </select>
 
-        <label for="dob">DOB</label>
-        <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" >
-
-        <label for="gender">Gender</label>
-        <select id="gender" name="gender" >
-            <option value="select">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-
-        <label for="country">Country</label>
-        <select id="country" name="country" >
-            <option value="select">Select Country</option>
-            <option value="India">India</option>
-            <option value="america">America</option>
-            <option value="South Africa">South Africa</option>
-            <option value="Australia">Australia</option>
-            <option value="Asia">Asia</option>
-            <option value="Russia">Russia</option>
-            <option value="Japan">Japan</option>
-            <option value="China">China</option>
-        </select>
-
-        <label for="religion">Religion</label>
-        <select id="religion" name="religion">
-            <option value="select">Select Religion</option>
-            <option value="Hindu">Hindu</option>
-            <option value="Muslim">Muslim</option>
-            <option value="Christian">hristian</option>
-            <option value="Christian">Christian</option>
-        </select>
-
-        <label for="community">Community</label>
-        <select id="community" name="community" required>
-            
-        </select>
+            <label for="community">Community</label>
+            <select id="community" name="community" required>
+                <option value="select">Select Community</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="MBC">MBC</option>
+                <option value="BC">BC</option>
+                <option value="OC">OC</option>
+            </select>
+        </div>
+    
 
         <label for="address">Address</label>
-        <textarea id="address" name="address" rows="4" required></textarea>
+        <textarea id="address" name="address" rows="4" placeholder="Type your address here..."></textarea>
 
         <label for="writingExperience">Do you have any writing experience?</label>
-        <input type="radio" id="yesExperience" name="writingExperience" value="yes" required>
-        <label for="yesExperience">Yes</label>
-        <input type="radio" id="noExperience" name="writingExperience" value="no" required>
-        <label for="noExperience">No</label>
+        <div class="name-container">
+            <input type="radio" id="yesExperience" name="writingExperience" value="yes" >
+            <label for="yesExperience">Yes</label>
+            <input type="radio" id="noExperience" name="writingExperience" value="no">
+            <label for="noExperience">No</label>
+        </div>
 
         <label for="experienceYears">Years of Experience:</label>
         <input type="number" id="experienceYears" name="experienceYears">

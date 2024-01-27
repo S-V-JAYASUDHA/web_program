@@ -10,15 +10,52 @@ body {
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.name-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.fa-eye{
+    position: absolute;
+    top: 28%;
+    right: 4%;
+    cursor: pointer;
+    color: lightgray;
+  }
+
+
+#firstName,
+#lastName,
+#username,
+#password,
+#email,
+#dob,
+#gender,
+#country,
+#religion,
+#community{
+            width: 32%; /* Adjust the width as needed */
+}
+
+#yesExperience,
+#NoExperience {
+    width: 40%;
+    margin-right: 20px;
+    margin-left: 0%;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 input, select, textarea {
