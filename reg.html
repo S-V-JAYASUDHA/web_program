@@ -7,7 +7,7 @@
     <title>WRIGHTERS HUB Registration</title>
 </head>
 <body>
-    <form>
+    <form  onsubmit="return validateForm()">
         <div class="name-container">
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" placeholder="First Name">
@@ -23,6 +23,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="password">
             <i class="fa-solid fa-eye" id="eye"></i>
+            <span id="passwordError" class="error"></span>
         </div>
         
         <div class="name-container">
@@ -123,5 +124,26 @@
 
         <button type="submit">Submit</button>
     </form>
+
+    <script>
+        function validateForm() {
+            // Get the password input and error span elements
+            var passwordInput = document.getElementById("password");
+            var passwordError = document.getElementById("passwordError");
+
+            // Define regular expressions for password validation
+            var uppercaseRegex = /[A-Z]/;
+            var specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+            // Check if the password meets the validation criteria
+            if (passwordInput.value.length < 8 || !uppercaseRegex.test(passwordInput.value) || !specialCharRegex.test(passwordInput.value)) {
+                passwordError.innerHTML = "Password must be at least 8 characters, include an uppercase letter, and have at least one special character";
+                return false; // Prevent form submission
+            } else {
+                passwordError.innerHTML = ""; // Clear any previous error message
+                return true; // Allow form submission
+            }
+        }
+    </script>
 </body>
 </html>
