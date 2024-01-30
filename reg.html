@@ -7,44 +7,62 @@
     <title>WRIGHTERS HUB Registration</title>
 </head>
 <body>
-    <form  onsubmit="return validateForm()">
-        <div class="name-container">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="First Name">
-    
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+    <div class="wrapper">
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+        <div><span class="dot"></span></div>
+      </div>
+    <form onsubmit="return validateForm()">
+        <h3>SignUp</h3><br>  <br>
+        <div class="image-container">
+        <img src="C:\Users\S.V.JAYASUDHA\Downloads\girl.jpg" alt="Trulli" width="150px" height="150px" style="border-radius: 90px; align-items: center;  border: solid rgb(70, 68, 68);">
         </div>
-
-        <div class="name-container">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" >
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="password">
-            <i class="fa-solid fa-eye" id="eye"></i>
-            <span id="passwordError" class="error"></span>
+        <div class="container">
+            <label for="firstName" class="required">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" style="margin-left: 2%" required>
         </div>
-        
+        <div class="container">
+            <label for="lastName" class="required">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" style="margin-left: 2%" required>
+        </div>
+        <div class="container">
+            <label for="username" class="required">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username" style="margin-left: 2%" required>
+        </div>
+        <div class="name-container">
+            <label for="password" class="required">Password</label>
+            <input type="password" id="password" name="password" placeholder="password" required>
+            <label for="Confirm password" class="required">Confirm Password</label>
+            <input type="password" id="Confirm password" name="Confirm password" placeholder="Confirm password" required>
+        </div>
         <div class="name-container">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email">
-
-            <label for="dob">DOB</label>
-            <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="mm/dd/yyyy" >
+            <input type="email" id="email" name="email" required>
+            <label for="dob" class="required">DOB</label>
+            <input type="date" id="birthday" name="birthday" required>
         </div>
-
         <div class="name-container">
-            <label for="gender">Gender</label>
-            <select id="gender" name="gender" >
+            <label for="gender" class="required">Gender</label>
+            <select id="gender" name="gender" required>
                 <option value="select">Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
-    
-            <label for="country">Country</label>
-            <select id="country" name="country" >
+            <label for="country" class="required">Country</label>
+            <select id="country" name="country" required>
                 <option value="select">Select Country</option>
                 <option value="India">India</option>
                 <option value="america">America</option>
@@ -56,18 +74,15 @@
                 <option value="China">China</option>
             </select>
         </div>
-    
         <div class="name-container">
-            <label for="religion">Religion</label>
-            <select id="religion" name="religion">
+            <label for="religion" class="required">Religion</label>
+            <select id="religion" name="religion" required>
                 <option value="select">Select Religion</option>
                 <option value="Hindu">Hindu</option>
                 <option value="Muslim">Muslim</option>
-                <option value="Christian">hristian</option>
                 <option value="Christian">Christian</option>
             </select>
-
-            <label for="community">Community</label>
+            <label for="community" class="required">Community</label>
             <select id="community" name="community" required>
                 <option value="select">Select Community</option>
                 <option value="SC">SC</option>
@@ -77,65 +92,111 @@
                 <option value="OC">OC</option>
             </select>
         </div>
-    
-
-        <label for="address">Address</label>
-        <textarea id="address" name="address" rows="4" placeholder="Type your address here..."></textarea>
-
-        <label for="writingExperience">Do you have any writing experience?</label>
+        <label for="address" class="required">Address</label>
+        <textarea id="address" name="address" rows="4" column="50" placeholder="Type your address here..." required></textarea>
         <div class="name-container">
-            <input type="radio" id="yesExperience" name="writingExperience" value="yes" >
-            <label for="yesExperience">Yes</label>
-            <input type="radio" id="noExperience" name="writingExperience" value="no">
-            <label for="noExperience">No</label>
+            <label for="experience">Do you have any writing experience?</label>
+            <select id="experience" name="experience" onchange="toggleConditionalQuestions()" required>
+                <option value="select">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="conditional-question conditional-question-yes" id="conditionalQuestionYes">
+            <label for="experienceYears">Years of Experience:</label>
+            <input type="number" id="experienceYears" name="experienceYears" >
+            <label for="genresInterest">Genres of Writing</label>
+            <div class="check">
+                <input type="checkbox" id="fiction" name="genresInterest" value="Fiction">
+                <label for="fiction">Fiction</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="nonFiction" name="genresInterest" value="Non-fiction">
+                <label for="nonFiction">Nonfiction</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="poetry" name="genresInterest" value="Poetry">
+                <label for="poetry">Poetry</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="drama" name="genresInterest" value="Drama">
+            <label for="drama">Drama</label>
+            </div>
+
+            <label for="others">Others:</label>
+            <input type="text" id="othersText" name="othersText">
+        </div>
+        <div class="conditional-question conditional-question-no" id="conditionalQuestionNo">
+            <label for="genresInterest">Genres of Interest</label>
+            <div class="check">
+                <input type="checkbox" id="fiction" name="genresInterest" value="Fiction">
+                <label for="fiction">Fiction</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="nonFiction" name="genresInterest" value="Non-fiction">
+                <label for="nonFiction">Nonfiction</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="poetry" name="genresInterest" value="Poetry">
+                <label for="poetry">Poetry</label>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="drama" name="genresInterest" value="Drama">
+            <label for="drama">Drama</label>
+            </div>
+
+            <label for="others">Others:</label>
+            <input type="text" id="othersText" name="othersText">
+        </div >
+        <div class="name-container">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP">
         </div>
 
-        <button type="submit">Next</button>
+        <div class="otp">
+            <button type="button" style="background-color: rgba(2, 248, 231, 0.604)" onclick="sendOTP()">Send OTP</button>
+            <button type="button" style="background-color: rgba(2, 248, 231, 0.604)" onclick="resendOTP()" id="resendBtn">Resend OTP</button><br>
+            <button type="submit" style="background-color: rgba(2, 248, 231, 0.604)" id="submitBtn" style="display: none;">Verify OTP</button>
+        </div>
+        <label class="agree">
+            <input type="checkbox" id="agree" name="agree">
+               <span>
+                  I Agree the Terms and Conditions
+               </span>
+        </label>
+        <div class="verify">
+            <button type="reset" style="background-color: red">Reset</button>
+            <button type="submit" style="background-color: green">Submit</button>
+        </div>
+
     </form>
+   
 
     <script>
         function validateForm() {
-            // Get the password input and error span elements
-            var passwordInput = document.getElementById("password");
-            var passwordError = document.getElementById("passwordError");
+            // Your validation logic here
+            return true; // or false based on validation result
+        }
 
-            // Define regular expressions for password validation
-            var uppercaseRegex = /[A-Z]/;
-            var specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+        function toggleConditionalQuestions() {
+            var experienceSelect = document.getElementById('experience');
+            var conditionalQuestionYes = document.getElementById('conditionalQuestionYes');
+            var conditionalQuestionNo = document.getElementById('conditionalQuestionNo');
 
-            // Check if the password meets the validation criteria
-            if (passwordInput.value.length < 8 || !uppercaseRegex.test(passwordInput.value) || !specialCharRegex.test(passwordInput.value)) {
-                passwordError.innerHTML = "Password must be at least 8 characters, include an uppercase letter, and have at least one special character";
-                return false; // Prevent form submission
+            if (experienceSelect.value === 'yes') {
+                conditionalQuestionYes.style.display = 'block';
+                conditionalQuestionNo.style.display = 'none';
             } else {
-                passwordError.innerHTML = ""; // Clear any previous error message
-                return true; // Allow form submission
+                conditionalQuestionYes.style.display = 'none';
+                conditionalQuestionNo.style.display = 'block';
             }
         }
     </script>
-
-<script>
-    function validateForm() {
-        // Get the value of the writing experience radio buttons
-        var writingExperienceValue = document.querySelector('input[name="writingExperience"]:checked').value;
-
-        // Check if the user selected "No" for writing experience
-        if (writingExperienceValue === "no") {
-            // Redirect to the next page (replace 'nextPage.html' with your actual next page URL)
-            window.location.href = 'nextPage.html';
-            return false; // Prevent form submission
-        }
-
-        if (writingExperienceValue === "yes") {
-            // Redirect to the next page (replace 'nextPage.html' with your actual next page URL)
-            window.location.href = 'writer_next.html';
-            return false; // Prevent form submission
-        }
-
-
-        // Continue with form submission if writing experience is "Yes"
-        return true;
-    }
-</script>
 </body>
 </html>
