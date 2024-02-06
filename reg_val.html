@@ -176,6 +176,19 @@
             <button type="submit" style="background-color: green">Submit</button>
         </div>
 
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+        <button type="button" onclick="sendOTP()">Send OTP</button>
+
+        <div id="otpSection">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+            <button type="button" onclick="resendOTP()">Resend OTP</button>
+        </div>
+
+        <button type="submit" id="submitBtn" style="display: none;">Verify OTP</button>
+
     </form>
    
 
@@ -200,7 +213,54 @@
         }
     </script>
 
+<script>
+    function validateForm() {
+        // Get the email input value
+        var emailInput = document.getElementById('email').value;
+
+        // Regular expression for basic email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Check if the email is valid
+        if (!emailRegex.test(emailInput)) {
+            // Display the error message
+            document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+            return false;
+        }
+
+        // Clear the error message if the email is valid
+        document.getElementById('emailError').innerText = '';
+
+        // Your other validation logic here
+
+        return true; // or false based on validation result
+    }
+
+    // ... (your existing functions)
+</script>
 
 
+<script>
+    function sendOTP() {
+        var otpSection = document.getElementById('otpSection');
+        var submitBtn = document.getElementById('submitBtn');
+
+        // Simulate OTP generation and show the OTP input section
+        otpSection.style.display = 'block';
+        submitBtn.style.display = 'block';
+        alert('OTP sent!'); // Simulate sending OTP (replace with actual logic)
+    }
+
+    function resendOTP() {
+        // Simulate OTP resend (replace with actual logic)
+        alert('OTP resent!');
+    }
+
+    function submitForm(event) {
+        // Add your OTP verification logic here (typically requires server-side processing)
+        event.preventDefault(); // Prevent the form from submitting for demonstration purposes
+        alert('OTP verified!'); // Show a confirmation (replace this with actual logic)
+    }
+</script>
 </body>
 </html>
