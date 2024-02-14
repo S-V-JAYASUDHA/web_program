@@ -27,8 +27,7 @@
         <div><span class="dot"></span></div>
         <div><span class="dot"></span></div>
     </div>
-
-    <form onsubmit="return validateForm()">
+    <form onsubmit="formHandler.submit()" onreset="formHandler.reset()">
         <h3>SignUp</h3><br> <br>
         <div class="image-container">
             <img onerror="imageErrorHandler.handle()" src="C:\Users\S.V.JAYASUDHA\Downloads\girl.jpg" alt="Trulli" width="150px" height="150px" style="border-radius: 90px; align-items: center;  border: solid rgb(70, 68, 68);">
@@ -181,16 +180,12 @@
                </span>
         </label>
         <div class="verify">
-    <button type="reset" style="background-color: red" onreset="formHandler1.reset()">Reset</button>
-    <button type="submit" style="background-color: green" onsubmit="formHandler.submit()">Submit</button>
+    <button type="reset" style="background-color: red">Reset</button>
+    <button type="submit" style="background-color: green">Submit</button>
          </div>
     </form>
 
     <script>
-        function validateForm() {
-            // Your validation logic here
-            return true; // or false based on validation result
-        }
        function sendOTP() {
             var otpSection = document.getElementById('otpSection');
             var submitBtn = document.getElementById('submitBtn');
@@ -247,29 +242,13 @@
                 }
             }
         };
-const form = document.querySelector('form');
-
-    form.addEventListener('reset', function (event) {
-        event.preventDefault();
-        formHandler1.reset();
-    });
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        formHandler.submit();
-    });
-
-    const formHandler1 = {
+    const formHandler= {
         reset: function () {
             alert("Form is Cleared");
-            // Additional logic on form reset if needed
-        }
-    };
-
-    const formHandler = {
+        },
         submit: function () {
             alert("Form is submitted");
-            // Additional logic on form submission if needed
+            
         }
     };
 
