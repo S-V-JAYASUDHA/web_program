@@ -180,9 +180,9 @@
                </span>
         </label>
         <div class="verify">
-    <button type="reset" style="background-color: red">Reset</button>
-    <button type="submit" style="background-color: green">Submit</button>
-         </div>
+            <button type="reset" style="background-color: red">Reset</button>
+            <button type="submit" style="background-color: green">Submit</button>
+        </div>
     </form>
 
     <script>
@@ -253,7 +253,7 @@
     };
 
         const textTransformer = {
-            toUpperCase: function (elementId) {
+            toUpperCase:  (elementId) => {
                 var element = document.getElementById(elementId);
                 element.value = element.value.toUpperCase();
             },
