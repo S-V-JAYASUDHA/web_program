@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example with User Input (Client-Side)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 5px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript's Fetch API Example with User Input (Client-Side)</h1>
+
+<label for="userId">User ID:</label>
+<input type="number" id="userId" placeholder="Enter user ID">
+
+<label for="title">Title:</label>
+<input type="text" id="title" placeholder="Enter title">
+
+<label for="completed">Completed:</label>
+<input type="checkbox" id="completed">
+
+<label for="body">Data:</label>
+<textarea id="body" placeholder="Enter data"></textarea>
+
+<button onclick="getData()">GET Data</button>
+<button onclick="postData()">POST Data</button>
+<button onclick="putData()">PUT Data</button>
+<button onclick="patchData()">PATCH Data</button>
+<button onclick="deleteData()">DELETE Data</button>
+
+<div id="output"></div>
+
+<script>
+    const apiUrl = 'https://jsonplaceholder.typicode.com/todos/';
+
+    function getData() {
+        const userId = document.getElementById('userId').value;
+        const url = userId ? apiUrl + userId : apiUrl;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => displayOutput(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function postData() {
+        const userId = document.getElementById('userId').value;
+        const title = document.getElementById('title').value;
+        const completed = document.getElementById('completed').checked;
+        const body = document.getElementById('body').value;
+
+        const newData = {
+            title: title || 'New Todo',
+            completed: completed,
+            userId: userId || 1,
+            body: body || 'Default Data',
+        };
+
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newData),
+        })
+            .then(response => response.json())
+            .then(data => displayOutput(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function putData() {
+        const userId = document.getElementById('userId').value;
+        const title = document.getElementById('title').value;
+        const completed = document.getElementById('completed').checked;
+        const body = document.getElementById('body').value;
+
+        const updatedData = {
+            id: userId,
+            title: title || 'Updated Todo',
+            completed: completed,
+            userId: userId || 1,
+            body: body || 'Default Data',
+        };
+
+        fetch(apiUrl + userId, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedData),
+        })
+            .then(response => response.json())
+            .then(data => displayOutput(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function patchData() {
+        const userId = document.getElementById('userId').value;
+        const title = document.getElementById('title').value;
+        const completed = document.getElementById('completed').checked;
+        const body = document.getElementById('body').value;
+
+        const patchedData = {
+            title: title || 'Patched Todo',
+            completed: completed,
+            body: body || 'Default Data',
+        };
+
+        fetch(apiUrl + userId, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(patchedData),
+        })
+            .then(response => response.json())
+            .then(data => displayOutput(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function deleteData() {
+        const userId = document.getElementById('userId').value;
+        fetch(apiUrl + userId, {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => displayOutput(data))
+            .catch(error => console.error('Error:', error));
+    }
+
+    function displayOutput(data) {
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = JSON.stringify(data, null, 2);
+    }
+</script>
+
+</body>
+</html>

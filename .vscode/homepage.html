@@ -33,8 +33,10 @@
 <!-- Body -->
 <section id="container">
     <div class="collaborate-content">
-        <img src="C:\Users\S.V.JAYASUDHA\Downloads\wr.jpg" style="width: 100%;height: 400px; margin-top: 4px;">
-       
+        <div class="image-container">
+            <img src="C:\Users\S.V.JAYASUDHA\Downloads\wr.jpg" alt="Image 1" class="collaborate-image" style="width: 100%;height: 400px; margin-top: 4px;">
+            <img src="C:\Users\S.V.JAYASUDHA\Downloads\im2.jpg" alt="Image 2" class="collaborate-image" style="width: 100%;height: 400px; margin-top: 4px; display: none;">
+        </div>
         <div class="centered">Collaborate with the Writers</div>
         <div class="centered1">Join our community of writers and bring your creative ideas to life. Connect, share, and inspire!</div>
     </div>
@@ -48,10 +50,10 @@
 </footer>
 
 <div class="im">
-    <div >
+    <div>
         <img src="C:\Users\S.V.JAYASUDHA\Downloads\wh.jpg" style="width: 250px;height: 150px; margin-right: 20px; margin-left: 300px; margin-top: 20px;">
     </div>
-    <div >
+    <div>
         <img src="C:\Users\S.V.JAYASUDHA\Downloads\ex.jpg" style="width: 250px;height: 150px; margin-right: 20px; margin-left: 50px; margin-top: 20px;">
     </div>
     <div>
@@ -61,6 +63,59 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="scripts.js"></script>
+<script>
 
+    $("#login").click(function(){
+        window.location.href = "file:///D:/web_program/web_program/loginpage.html"; // Replace with the actual login page URL
+    });
+
+    $("#signup").click(function(){
+        window.location.href = "file:///D:/web_program/web_program/ref.html"; // Replace with the actual login page URL
+    });
+
+
+    $(document).ready(function(){
+
+        // Toggle Login/Signup Form
+        $("#login").click(function(){
+            $(".login-form").toggle();
+            $(".signup-form").hide();
+        });
+
+        $("#signup").click(function(){
+            $(".signup-form").toggle();
+            $(".login-form").hide();
+        });
+
+        // Change Background Color on Hover
+        $("nav a").hover(function(){
+            $(this).css("background-color", "#f0f0f0");
+        }, function(){
+            $(this).css("background-color", "");
+        });
+
+        // Image Slider
+        let currentImage = 0;
+        const images = [
+            "C:\\Users\\S.V.JAYASUDHA\\Downloads\\wr.jpg",
+            "C:\\Users\\S.V.JAYASUDHA\\Downloads\\im2.jpg"
+        ];
+
+        function changeImage(){
+            $(".collaborate-content .collaborate-image").eq(currentImage).show().siblings().hide();
+            currentImage = (currentImage + 1) % images.length;
+        }
+
+        setInterval(changeImage, 3000);
+
+        // Hide Footer on Scroll
+        $(window).scroll(function(){
+            $("footer").slideUp();
+        });
+
+        // Open Links in New Tab
+        $("nav a").attr("target", "_blank");
+    });
+</script>
 </body>
 </html>
